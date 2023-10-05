@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import customInput as ci
 
 # Reads movies.dat
-moviesDf = pd.read_table('movies.dat', 
+moviesDf = pd.read_table('data/movies.dat', 
                         sep = '::', 
                         header = None, 
                         names = ['MovieID', 'Title', 'Genres'], 
@@ -13,14 +13,14 @@ moviesDf = pd.read_table('movies.dat',
                         encoding = 'cp1252')
 
 # Reads ratings.dat
-ratingsDf = pd.read_table('ratings.dat', 
+ratingsDf = pd.read_table('data/ratings.dat', 
                          sep = '::', 
                          header = None, 
                          names = ['UserID', 'MovieID', 'Rating', 'Timestamp'], 
                          engine = 'python')
 
 # Reads users.dat
-usersDf = pd.read_table('users.dat', 
+usersDf = pd.read_table('data/users.dat', 
                        sep = '::', 
                        header = None, 
                        names = ['UserID', 'Gender', 'Age', 'Occupation', 'Zip-code'], 
@@ -80,7 +80,7 @@ age = int(ci.customInput('Input age (1, 18, 25, 35, 45, 50, 56): ',
 
 ratingsToVisualize = getTopMovies(gender, age)
 
-print(ratingsToVisualize)
+# print(ratingsToVisualize)
 
 showGraph(ratingsToVisualize)
 
